@@ -7,9 +7,11 @@ import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import {jwtConstants} from './constants';
 import {JwtStrategy} from './jwt.strategy';
+import { MailerModule1} from '../mailer/mailer.module';
 
 @Module({
-  imports: [UsersModule, 
+  imports: [UsersModule,
+              MailerModule1, 
               PassportModule,
               JwtModule.register({
                 secret: jwtConstants.secret,
